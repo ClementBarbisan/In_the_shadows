@@ -5,9 +5,11 @@ public class collider : MonoBehaviour {
 	public int index;
 	public bool inside = false;
 	Renderer render;
+	checkSuccess parent;
 	// Use this for initialization
 	void Start () 
 	{
+		parent = GetComponentInParent<checkSuccess> ();
 		render = GetComponent<Renderer> ();
 	}
 	
@@ -22,13 +24,13 @@ public class collider : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (other.tag == "sphere_" + index)
+		if (other.tag == "sphere_" + index && other.transform.IsChildOf(parent.transform))
 			inside = true;
 	}
 
 	void OnTriggerExit(Collider other)
 	{
-		if (other.tag == "sphere_" + index)
+		if (other.tag == "sphere_" + index && other.transform.IsChildOf(parent.transform))
 			inside = false;
 	}
 }

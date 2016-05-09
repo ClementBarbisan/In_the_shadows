@@ -19,7 +19,7 @@ public class checkSuccess : MonoBehaviour {
 			else if (!list[i].inside)
 				break;
 		}
-		if (success)
-			this.gameObject.SetActive (false);
+//		if (success)
+//			this.gameObject.SetActive (false);
 	}
 }

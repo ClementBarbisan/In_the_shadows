@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{CEA86C2B-70C6-053F-8259-D69AF30E8F59}</ProjectGuid>
+	<ProjectGuid>{34166A51-720C-19F1-7017-2BAF0A9F0575}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,9 +45,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\checkSuccess.cs" />
-     <Compile Include="Assets\collider.cs" />
-     <Compile Include="Assets\rotationObject.cs" />
+     <Compile Include="Assets\Scripts\checkSuccess.cs" />
+     <Compile Include="Assets\Scripts\chooseObject.cs" />
+     <Compile Include="Assets\Scripts\collider.cs" />
+     <Compile Include="Assets\Scripts\rotationObject.cs" />
+     <Compile Include="Assets\Scripts\spawner.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
