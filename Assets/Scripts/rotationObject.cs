@@ -9,10 +9,9 @@ public class rotationObject : MonoBehaviour {
 	void Awake () 
 	{
 		difficulty = PlayerPrefs.GetInt ("difficulty");
-		difficulty = 2;
 		if (difficulty == 0)
 			this.transform.Rotate(new Vector3(Random.Range(-90, 90), 0.0f, 0.0f));
-		else if (difficulty > 1)
+		else if (difficulty >= 1)
 			this.transform.Rotate(new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), 0.0f));
 		if (difficulty == 2)
 			this.transform.Translate (0.0f, 0.0f, Random.Range(-3, 3), Space.World);

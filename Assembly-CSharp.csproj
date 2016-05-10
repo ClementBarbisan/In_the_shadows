@@ -45,9 +45,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\buttons.cs" />
      <Compile Include="Assets\Scripts\checkSuccess.cs" />
      <Compile Include="Assets\Scripts\chooseObject.cs" />
      <Compile Include="Assets\Scripts\collider.cs" />
+     <Compile Include="Assets\Scripts\levels.cs" />
+     <Compile Include="Assets\Scripts\manager.cs" />
+     <Compile Include="Assets\Scripts\menuButtons.cs" />
      <Compile Include="Assets\Scripts\rotationObject.cs" />
      <Compile Include="Assets\Scripts\spawner.cs" />
  <Reference Include="UnityEngine.Networking">
