@@ -9,6 +9,22 @@ public class levels : MonoBehaviour {
 		listButtons = GetComponentsInChildren<buttons> (); 
 	}
 
+	IEnumerator wiggle(int i)
+	{
+		while (true) {
+			for (int j = 0; j < 40; j++)
+			{
+				listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, 0.15f));
+				yield return null;
+			}
+			for (int j = 0; j < 40; j++)
+			{
+				listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, -0.15f));
+				yield return null;
+			}
+		}
+	}
+
 	void OnEnable()
 	{
 		if (PlayerPrefs.GetString ("mode") == "normal") {
@@ -17,8 +33,6 @@ public class levels : MonoBehaviour {
 				{
 					listButtons[i].gameObject.GetComponentInChildren<Text>().color = Color.green;
 					listButtons [i].gameObject.SetActive (true);
-					listButtons[i].gameObject.GetComponentInChildren<ParticleSystem>().enableEmission = false;
-					listButtons[i].gameObject.GetComponentInChildren<ParticleSystem>().Stop();
 				}
 				else if (i == PlayerPrefs.GetInt ("unlock"))
 				{
@@ -26,8 +40,7 @@ public class levels : MonoBehaviour {
 					listButtons [i].gameObject.SetActive (true);
 					if (PlayerPrefs.GetInt("oldUnlock") != PlayerPrefs.GetInt ("unlock"))
 					{
-						listButtons[i].gameObject.GetComponentInChildren<ParticleSystem>().enableEmission = true;
-						listButtons[i].gameObject.GetComponentInChildren<ParticleSystem>().Play();
+						StartCoroutine(wiggle(i));
 					}
 				}
 				else
