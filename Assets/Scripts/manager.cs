@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine;
-using System.Collections;
 
 [ExecuteInEditMode]
 public class manager : MonoBehaviour {
@@ -10,7 +8,6 @@ public class manager : MonoBehaviour {
 	// Creates a private material used to the effect
 	void Awake ()
 	{
-//		material = new Material( Shader.Find("Custom/WaterShader") );
 	}
 
 	void Update()

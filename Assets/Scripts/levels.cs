@@ -11,7 +11,6 @@ public class levels : MonoBehaviour {
 
 	void OnEnable()
 	{
-		Debug.Log (PlayerPrefs.GetInt ("unlock"));
 		if (PlayerPrefs.GetString ("mode") == "normal") {
 			for (int i = 0; i < listButtons.Length; i++) {
 				if (i < PlayerPrefs.GetInt ("unlock"))
