@@ -5,9 +5,15 @@ public class rotationObject : MonoBehaviour {
 	int difficulty;
 	Vector3 oldPos = Vector3.zero;
 	public bool choosen = false;
+	Renderer[] allRender;
 	// Use this for initialization
 	void Awake () 
 	{
+		allRender = GetComponentsInChildren<Renderer> ();
+		for (int i = 0; i < allRender.Length; i++) {
+			if (allRender[i].gameObject != this.gameObject)
+				allRender [i].enabled = !allRender [i].enabled;
+		}
 		difficulty = PlayerPrefs.GetInt ("difficulty");
 		if (difficulty == 0)
 			this.transform.Rotate(new Vector3(Random.Range(-90, 90), 0.0f, 0.0f));
@@ -20,6 +26,13 @@ public class rotationObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetKeyDown (KeyCode.V)) {
+			for (int i = 0; i < allRender.Length; i++)
+			{
+				if (allRender[i].gameObject != this.gameObject)
+					allRender[i].enabled = !allRender[i].enabled;
+			}
+		}
 		if (choosen) {
 			if (difficulty > 0 && Input.GetMouseButton (0) && Input.GetKey (KeyCode.LeftControl))
 				this.transform.Rotate (new Vector3 (0.0f, Input.mousePosition.x - oldPos.x, 0.0f));

@@ -40,7 +40,12 @@ public class chooseObject : MonoBehaviour
 			}
 			for (int i = 0; i < listSuccess.Length; i++) {
 				if (listSuccess [i].success && i == listSuccess.Length - 1)
+				{
+					for (int j = 0; j < list.Length; j++) {
+							list [j].GetComponent<rotationObject> ().choosen = false;
+					}
 					success = true;
+				}
 				else if (!listSuccess [i].success)
 					break;
 			}

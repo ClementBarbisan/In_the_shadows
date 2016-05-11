@@ -7,15 +7,18 @@ public class collider : MonoBehaviour {
 	Renderer render;
 	checkSuccess parent;
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
 		parent = GetComponentInParent<checkSuccess> ();
 		render = GetComponent<Renderer> ();
+		render.enabled = !render.enabled;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetKeyDown (KeyCode.V))
+			render.enabled = !render.enabled;
 		if (inside)
 			render.material.color = Color.green;
 		else
