@@ -1,14 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using System.Collections;
 
+[ExecuteInEditMode]
 public class manager : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+	public Material material;
+	
+	// Creates a private material used to the effect
+	void Awake ()
+	{
+//		material = new Material( Shader.Find("Custom/WaterShader") );
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Update()
+	{
+
+	}
+
+	// Postprocess the image
+	void OnRenderImage (RenderTexture source, RenderTexture destination)
+	{
+		Graphics.Blit (source, destination, material);
 	}
 }

@@ -52,9 +52,11 @@
      <Compile Include="Assets\Scripts\levels.cs" />
      <Compile Include="Assets\Scripts\manager.cs" />
      <Compile Include="Assets\Scripts\menuButtons.cs" />
+     <Compile Include="Assets\Scripts\renderPlane.cs" />
      <Compile Include="Assets\Scripts\rotationObject.cs" />
      <Compile Include="Assets\Scripts\spawner.cs" />
      <Compile Include="Assets\Scripts\successButtons.cs" />
+     <None Include="Assets\Materials\WaterShader.shader" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
