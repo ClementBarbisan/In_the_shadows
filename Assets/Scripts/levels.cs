@@ -11,15 +11,20 @@ public class levels : MonoBehaviour {
 
 	IEnumerator wiggle(int i)
 	{
+		for (int j = 0; j < 7; j++)
+		{
+			listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, -0.4f));
+			yield return null;
+		}
 		while (true) {
-			for (int j = 0; j < 40; j++)
+			for (int j = 0; j < 14; j++)
 			{
-				listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, 0.15f));
+				listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, 0.4f));
 				yield return null;
 			}
-			for (int j = 0; j < 40; j++)
+			for (int j = 0; j < 14; j++)
 			{
-				listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, -0.15f));
+				listButtons[i].transform.Rotate(new Vector3(0.0f, 0.0f, -0.4f));
 				yield return null;
 			}
 		}
@@ -31,13 +36,13 @@ public class levels : MonoBehaviour {
 			for (int i = 0; i < listButtons.Length; i++) {
 				if (i < PlayerPrefs.GetInt ("unlock"))
 				{
-					listButtons[i].gameObject.GetComponentInChildren<Text>().color = Color.green;
 					listButtons [i].gameObject.SetActive (true);
+					listButtons[i].gameObject.GetComponentInChildren<Text>().color = Color.green;
 				}
 				else if (i == PlayerPrefs.GetInt ("unlock"))
 				{
-					listButtons[i].gameObject.GetComponentInChildren<Text>().color = Color.black;
 					listButtons [i].gameObject.SetActive (true);
+					listButtons[i].gameObject.GetComponentInChildren<Text>().color = Color.black;
 					if (PlayerPrefs.GetInt("oldUnlock") != PlayerPrefs.GetInt ("unlock"))
 					{
 						StartCoroutine(wiggle(i));
@@ -53,6 +58,7 @@ public class levels : MonoBehaviour {
 			for (int i = 0; i < listButtons.Length; i++)
 			{
 				listButtons[i].gameObject.SetActive(true);
+				listButtons[i].gameObject.GetComponentInChildren<Text>().color = Color.black;
 			}
 		}
 	}

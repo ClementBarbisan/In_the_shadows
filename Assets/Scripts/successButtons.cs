@@ -14,11 +14,13 @@ public class successButtons : MonoBehaviour {
 
 	public void returnToMenu()
 	{
+		PlayerPrefs.SetInt ("fromScene", 1);
 		Application.LoadLevel ("menu");
 	}
 
 	public void Quit()
 	{
+		PlayerPrefs.SetInt ("fromScene", 0);
 		Application.Quit ();
 	}
 

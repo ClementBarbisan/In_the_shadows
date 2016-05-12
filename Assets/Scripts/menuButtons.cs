@@ -6,8 +6,7 @@ public class menuButtons : MonoBehaviour {
 	public GameObject other;
 	public GameObject self;
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
 	}
 
 	public void showCanvas()
